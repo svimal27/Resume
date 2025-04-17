@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="hero">
+    <h1>Hi, I'm Vimalnath Segaran</h1>
+    <p>Chemical Engineer | Aspiring Web Developer</p>
+  </header>
+
+  <section class="about">
+    <h2>About Me</h2>
+    <div class="about-content">
+      <img src="vimal.jpeg" alt="Vimal" class="profile-pic">
+      <p>
+        I graduated with a degree in Chemical Engineering and started my career as a Process Engineer in a palm oil refinery. During this period, I have gained hands-on experience in refinery operations, product quality control, and continuous improvement.
+      </p>
+    </div>
+  </section>
+  
+  
+
+ <section class="achievements">
+  <h2>Career Highlights</h2>
+  <div class="scroll-container">
+  <!-- Achievement 1 -->
+  <div class="card">
+    <h3>Steam Optimization</h3>
+    <p>Successfully reduced steam consumption, improving plant efficiency.</p>
+  </div>
+
+  <!-- Achievement 2 -->
+  <div class="card">
+    <h3>Team Leadership</h3>
+    <p>Led a cross-functional team to implement process improvements.</p>
+  </div>
+
+  <!-- Achievement 3 -->
+  <div class="card">
+    <h3>Automation Project</h3>
+    <p>Automated key processes, reducing human error and increasing output.</p>
+  </div>
+  <!-- Achievement 1 -->
+  <div class="card">
+    <h3>Steam Optimization</h3>
+    <p>Successfully reduced steam consumption, improving plant efficiency.</p>
+  </div>
+
+  <!-- Achievement 2 -->
+  <div class="card">
+    <h3>Team Leadership</h3>
+    <p>Led a cross-functional team to implement process improvements.</p>
+  </div>
+
+  <!-- Achievement 3 -->
+  <div class="card">
+    <h3>Automation Project</h3>
+    <p>Automated key processes, reducing human error and increasing output.</p>
+  </div>
+
+  <!-- New Achievement 4: Product Quality Improvement -->
+  <div class="card">
+    <h3>Product Quality Improvement</h3>
+    <p>Enhanced product quality by implementing better quality control measures, resulting in reduced defects.</p>
+  </div>
+
+  <!-- New Achievement 5: Project Management -->
+  <div class="card">
+    <h3>Project Management</h3>
+    <p>Successfully managed multiple projects, meeting deadlines and budget constraints.</p>
+  </div>
+
+  <!-- New Achievement 6: Food Safety -->
+  <div class="card">
+    <h3>Food Safety</h3>
+    <p>Ensured compliance with all safety regulations, preventing contamination risks.</p>
+  </div>
+</div>
+
+</section>
+
+
+  <section class="web-dev">
+    <h2>Web Development Journey</h2>
+    <p>
+      Alongside my engineering career, I’ve developed a strong interest in web development. I’ve been learning HTML, CSS, and JavaScript — building webpages like this one from scratch, and exploring how modern websites are structured and styled.
+    </p>
+    <p>
+      This portfolio itself is a reflection of what I’ve learned and built using only HTML and CSS, published via GitHub Pages.
+    </p>
+  </section>
+
+  <section class="qualification">
+    <h2>Qualification</h2>
+    <ul>
+      
+      <li><strong>Master:</strong> Business Administration (MBA) – Universiti Teknologi Malaysia, 2023-2025</li>
+      <li><strong>Bachelor’s Degree:</strong> B.Eng. in Chemical Engineering – Manipal International University, 20144-2018</li>
+    </ul>
+  </section>
+  
+  <footer class="footer">
+    <p>Get in touch: svimal27@gmail.com | GitHub: github.com/svimal27</p>
+  </footer>
+  <script>
+    const scrollContainer = document.querySelector('.scroll-container');
+  
+    let isDown = false;
+    let startX;
+    let scrollLeft;
+  
+    scrollContainer.addEventListener('mousedown', (e) => {
+      isDown = true;
+      startX = e.pageX - scrollContainer.offsetLeft;
+      scrollLeft = scrollContainer.scrollLeft;
+      scrollContainer.style.cursor = 'grabbing';
+    });
+  
+    scrollContainer.addEventListener('mouseleave', () => {
+      isDown = false;
+      scrollContainer.style.cursor = 'grab';
+    });
+  
+    scrollContainer.addEventListener('mouseup', () => {
+      isDown = false;
+      scrollContainer.style.cursor = 'grab';
+    });
+  
+    scrollContainer.addEventListener('mousemove', (e) => {
+      if (!isDown) return;
+      e.preventDefault();
+      const x = e.pageX - scrollContainer.offsetLeft;
+      const walk = (x - startX) * 5.2; // Lower value = smoother drag
+      scrollContainer.scrollLeft = scrollLeft - walk;
+    });
+  
+    scrollContainer.addEventListener('touchstart', (e) => {
+      startX = e.touches[0].pageX - scrollContainer.offsetLeft;
+      scrollLeft = scrollContainer.scrollLeft;
+    });
+  
+    scrollContainer.addEventListener('touchmove', (e) => {
+      const x = e.touches[0].pageX - scrollContainer.offsetLeft;
+      const walk = (x - startX) * 5.2;
+      scrollContainer.scrollLeft = scrollLeft - walk;
+    });
+  </script>
+  
+
+</body>
+</html>
